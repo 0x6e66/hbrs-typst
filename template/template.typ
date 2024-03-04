@@ -11,7 +11,7 @@
 
 #let thesis(doc) = {
   set text(
-    font: "Noto Music",
+    font: "New Computer Modern",
     weight: "regular",
     size: 11pt,
     lang: language
@@ -24,7 +24,7 @@
       left: 4cm,
       right: 2cm,
       top: 2.5cm,
-      bottom: 1cm,
+      bottom: 1.5cm,
     ),
     header: locate(loc => {
       if [#loc.page()] == [1] {
@@ -44,11 +44,12 @@
     footer: [
       #set align(center)
       #counter(page).display(
-        "-1-",
+        "-- 1 --",
       )
-    ]
+    ],
   )
   set heading(numbering: "1.1")
+
   set par(justify: true)
 
   doc
