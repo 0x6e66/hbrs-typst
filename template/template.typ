@@ -3,6 +3,7 @@
 #import "meta.typ": *
 #import "titlepage.typ": *
 #import "declaration.typ": *
+#import "utils.typ": *
 
 #let auto_import(file) = {
   include {"../modules_" + language + "/" + file + ".typ"}
@@ -38,14 +39,14 @@
         h(1fr) + emph(body)
       }
     }),
-    number-align: center,
-    // numbering: "-1-"
-    footer: [
-      #set align(center)
-      #counter(page).display(
-        "-- 1 --",
-      )
-    ],
+    // number-align: center,
+    // numbering: none
+    // footer: [
+    //   #set align(center)
+    //   #counter(page).display(
+    //     "-- 1 --",
+    //   )
+    // ],
   )
   set heading(numbering: "1.1")
 
