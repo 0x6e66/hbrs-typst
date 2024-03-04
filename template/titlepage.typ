@@ -46,25 +46,27 @@
     )
   )
 
-  v(-0.8cm)
+  if language_switch(thesis_sub_title) != "" {
+    v(-0.8cm)
 
-  align(
-    center,
-    text(
-      size: 15pt,
-      [-],
+    align(
+      center,
+      text(
+        size: 15pt,
+        [-],
+      )
     )
-  )
 
-  v(-0.5cm)
+    v(-0.5cm)
 
-  align(
-    center,
-    text(
-      size: 18pt,
-      language_switch(thesis_sub_title),
+    align(
+      center,
+      text(
+        size: 18pt,
+        language_switch(thesis_sub_title),
+      )
     )
-  )
+  }
 
   v(0.8cm)
 
