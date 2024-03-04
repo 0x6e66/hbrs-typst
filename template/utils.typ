@@ -1,4 +1,5 @@
 #import "meta.typ": *
+#import "@preview/outrageous:0.1.0"
 
 #let language_switch(dict) = {
   for (k, v) in dict {
@@ -15,6 +16,9 @@
 }
 
 #let table_of_contents = {
+  show outline.entry: outrageous.show-entry.with(
+    ..outrageous.presets.outrageous-toc,
+  )
   outline(
     title:
       if language == "de" {
@@ -23,12 +27,17 @@
         "Table of Contenst"
       },
     target: heading,
+    indent: auto,
+    depth: 3
   )
 
   pagebreak()
 }
 
 #let table_of_figures = {
+  show outline.entry: outrageous.show-entry.with(
+    ..outrageous.presets.outrageous-figures,
+  )
   outline(
     title:
       if language == "de" {

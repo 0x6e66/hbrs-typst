@@ -8,7 +8,6 @@
   include {"../modules_" + language + "/" + file + ".typ"}
 }
 
-
 #let thesis(doc) = {
   set text(
     font: "New Computer Modern",
@@ -51,6 +50,20 @@
   set heading(numbering: "1.1")
 
   set par(justify: true)
+
+  // show heading: it => [
+  //   #let s = {
+  //     if it.level == 1{
+  //       30pt
+  //     } else if it.level == 2 {
+  //       16pt
+  //     }else {
+  //       11pt
+  //     }
+  //   }
+  //   #set text(size: s)
+  //   #it
+  // ]
 
   doc
 }
