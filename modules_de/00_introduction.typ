@@ -1,3 +1,5 @@
+#import "../template/template.typ": *
+
 = Einleitung
 #lorem(50)
 
@@ -19,6 +21,9 @@ in @tab1 kann man sehen, dass
 #lorem(20)
 @Wellens2010 @Yoshida1999 @Walke2001 #lorem(2) @Walke2000 @Burns2003
 #lorem(20)
+#acro("API")
+#lorem(20)
+#acro("API")
 
 ==== asdf
 #lorem(50)
