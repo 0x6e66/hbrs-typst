@@ -1,5 +1,7 @@
-#import "meta.typ": *
 #import "@preview/outrageous:0.1.0"
+
+#import "meta.typ": *
+#import "acronyms.typ": acronyms
 
 #let language_switch(dict) = {
   for (k, v) in dict {
@@ -38,31 +40,85 @@
       },
     target: heading,
     indent: auto,
-    depth: 3
+    depth: 3,
   )
 
   pagebreak()
 }
 
 #let table_of_figures = {
-  show outline.entry: outrageous.show-entry.with(
-    ..outrageous.presets.outrageous-figures,
+  heading(
+    numbering: none,
+    outlined: true,
+    bookmarked: true, 
+    if language == "de" {
+      "Abbildungsverzeichnis"
+    } else if language == "en" {
+      "List of figures"
+    }
   )
   outline(
-    title:
-      if language == "de" {
-        "Abbildungsverzeichnis"
-      } else if language == "en" {
-        "Table of Figures"
-      },
-    target: figure,
+    title: none,
+    target: figure.where(kind: "fig"),
   )
+}
 
-  pagebreak()
+#let table_of_tables = {
+  heading(
+    numbering: none,
+    outlined: true,
+    bookmarked: true, 
+    if language == "de" {
+      "Tabellenverzeichnis"
+    } else if language == "en" {
+      "List of tables"
+    }
+  )
+  outline(
+    title: none,
+    target: figure.where(kind: "tab"),
+  )
+}
+
+#let table_of_acronyms = {
+  heading(
+    numbering: none,
+    outlined: true,
+    bookmarked: true, 
+    if language == "de" {
+      "Abkürzungsverzeichnis"
+    } else if language == "en" {
+      "List of acronyms"
+    }
+  )
+  table(
+    columns: (auto, auto),
+    stroke: none,
+    align: (x, y) => (right, left).at(x),
+    ..for (k, v) in acronyms {
+      ([*#k*], v)
+    }
+  )
+}
+
+#let table_of_listings = {
+  heading(
+    numbering: none,
+    outlined: true,
+    bookmarked: true, 
+    if language == "de" {
+      "Quellcodeverzeichnis"
+    } else if language == "en" {
+      "List of code-listings"
+    }
+  )
+  outline(
+    title: none,
+    target: figure.where(kind: "lst"),
+  )
 }
 
 #let bib = {
-  pagebreak()
   bibliography(
     title: {
       if language == "de" {

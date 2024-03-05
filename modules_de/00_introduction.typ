@@ -11,6 +11,8 @@
     [t], [1], [2], [3],
     [y], [0.3s], [0.4s], [0.8s],
   ),
+  kind: "tab",
+  supplement: "Tabelle",
   caption: [Timing results],
 ) <tab1>
 in @tab1 kann man sehen, dass
@@ -24,9 +26,46 @@ in @tab1 kann man sehen, dass
 #acro("API")
 #lorem(20)
 #acro("API")
+#lorem(20)
+#acro("IOCCC")
+#lorem(20)
+#acro("IOCCC")
 
 ==== asdf
-#lorem(50)
+#lorem(20)
+#figure(
+  image("../img/hbrs_logo.jpg"),
+  caption: [HBRS logo],
+  kind: "fig",
+  supplement: "Abbildung"
+) <abb1>
 
 ===== asdf
-#lorem(50)
+#lorem(20)
+#figure(
+  ```rust
+  fn handle_connection(mut stream: TcpStream) {
+      // --snip--
+
+      let (status_line, filename) = if request_line == "GET / HTTP/1.1" {
+          ("HTTP/1.1 200 OK", "hello.html")
+      } else {
+          ("HTTP/1.1 404 NOT FOUND", "404.html")
+      };
+
+      let contents = fs::read_to_string(filename).unwrap();
+      let length = contents.len();
+
+      let response =
+          format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
+
+      stream.write_all(response.as_bytes()).unwrap();
+  }
+ ```,
+  caption: [Code Ausschnitt],
+  kind: "lst",
+  supplement: "Listing",
+  outlined: true,
+) <lst1>
+#lorem(20)
+in @lst1 kann man sehen, dass

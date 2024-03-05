@@ -3,14 +3,10 @@
 #show: thesis
 
 #titlepage
-
 #declaration
-
 #table_of_contents
-#table_of_figures
 
 // Start page numbering when actual content starts
-// #start_page_numbering
 #set page(footer: [
     #set align(center)
     #counter(page).display(
@@ -22,4 +18,13 @@
 #auto_import("00_introduction")
 #auto_import("01_fundamentals")
 
+#pagebreak()
+#table_of_figures
+#pagebreak()
+#table_of_tables
+#pagebreak()
+#table_of_listings
+#pagebreak()
+#table_of_acronyms
+#pagebreak()
 #bib
