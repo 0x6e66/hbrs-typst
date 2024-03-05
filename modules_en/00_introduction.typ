@@ -1,8 +1,8 @@
 = Einleitung
-#lorem(500)
+#lorem(50)
 
 == Sub-Einleitung
-#lorem(200)
+#lorem(20)
 #figure(
   table(
     columns: 4,
@@ -12,14 +12,16 @@
   caption: [Timing results],
 ) <tab1>
 in @tab1 kann man sehen, dass
-#lorem(200)
+#lorem(20)
 
 
 === Sub-Sub-Einleitung
-#lorem(500)
+#lorem(20)
+@Wellens2010 @Yoshida1999 @Walke2001 #lorem(2) @Walke2000
+#lorem(20)
 
 ==== asdf
-#lorem(500)
+#lorem(50)
 
 ===== asdf
-#lorem(500)
+#lorem(50)

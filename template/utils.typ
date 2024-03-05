@@ -60,3 +60,17 @@
 
   pagebreak()
 }
+
+#let bib = {
+  pagebreak()
+  bibliography(
+    title: {
+      if language == "de" {
+        "Literaturverzeichnis"
+      } else if language == "en" {
+        "Bibliography"
+      }
+    },
+    bib_file
+  )
+}

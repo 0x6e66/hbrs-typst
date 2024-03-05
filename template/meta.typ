@@ -23,8 +23,8 @@
 )
 
 #let thesis_sub_title = (
-  "de": "Untertitel der Arbeit",
-  "en": "Subtitle of the thesis",
+  "de": "Optionaler Untertitel der Arbeit",
+  "en": "optional subtitle of the thesis",
 )
 
 #let thesis_study_course = (
@@ -33,3 +33,4 @@
 )
 
 #let hbrs_logo = "../img/hbrs_logo.jpg"
+#let bib_file = "../main.bib"
