@@ -17,16 +17,6 @@
   datetime.today().display("[day].[month].[year]")
 }
 
-// #let start_page_numbering = {
-//   set page(footer: [
-//     #set align(center)
-//     #counter(page).display(
-//       "-- 1 --",
-//     )
-//   ])
-//   counter(page).update(1)
-// }
-
 #let table_of_contents = {
   show outline.entry: outrageous.show-entry.with(
     ..outrageous.presets.outrageous-toc,
@@ -36,7 +26,7 @@
       if language == "de" {
         "Inhaltsverzeichnis"
       } else if language == "en" {
-        "Table of Contenst"
+        "Table of Contents"
       },
     target: heading,
     indent: auto,
