@@ -2,6 +2,7 @@
 #import "utils.typ": *
 
 #let declaration = {
+  set page(background: none)
 
   align(
     left,
@@ -68,6 +69,4 @@
       }
     )
   )
-  
-  pagebreak()
 }

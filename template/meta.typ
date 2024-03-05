@@ -32,5 +32,4 @@
   "en": "Conputer Science",
 )
 
-#let hbrs_logo = "../img/hbrs_logo.jpg"
 #let bib_file = "../main.bib"

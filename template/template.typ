@@ -49,6 +49,7 @@
       top: 2.5cm,
       bottom: 1.5cm,
     ),
+    background: none,
     header: locate(loc => {
       if [#loc.page()] == [1] {
         return []
@@ -62,32 +63,10 @@
         h(1fr) + emph(body)
       }
     }),
-    // number-align: center,
-    // numbering: none
-    // footer: [
-    //   #set align(center)
-    //   #counter(page).display(
-    //     "-- 1 --",
-    //   )
-    // ],
   )
   set heading(numbering: "1.1")
 
   set par(justify: true)
-
-  // show heading: it => [
-  //   #let s = {
-  //     if it.level == 1{
-  //       30pt
-  //     } else if it.level == 2 {
-  //       16pt
-  //     }else {
-  //       11pt
-  //     }
-  //   }
-  //   #set text(size: s)
-  //   #it
-  // ]
 
   doc
 }

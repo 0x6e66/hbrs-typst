@@ -2,10 +2,28 @@
 #import "utils.typ": *
 
 #let titlepage = {
+  set page(
+    background: {
+        place(center + horizon, circle(radius: 12cm, fill: rgb("#009fd6"), stroke: none), dx: 16cm)
+        place(center + horizon, circle(radius: 12cm, fill: rgb("#009fd6"), stroke: none), dx: -16cm)
+        place(center + horizon, circle(radius: 8.5cm, fill: rgb("#ffffff"), stroke: none), dx: -16cm)
+    },
+    margin: (
+      left: 2cm,
+      right: 2cm,
+      top: 2.5cm,
+      bottom: 2cm,
+    ),
+  )
+
   grid(
     columns: (20%, 80%),
     gutter: 10pt,
-    image(hbrs_logo),
+    {
+      place(center + horizon, circle(radius: .5cm, fill: rgb("#009fd6"), stroke: none), dx: 1.2cm, dy: -1cm)
+      place(center + horizon, circle(radius: .5cm, fill: rgb("#009fd6"), stroke: none), dx: 0cm, dy: -1cm)
+      place(center + horizon, circle(radius: .3cm, fill: rgb("#ffffff"), stroke: none), dx: 0cm, dy: -1cm)
+    },
     align(left, text([*Hochschule \ Bonn-Rhein-Sieg* \ _University of Applied Sciences_ \ \ *Fachbereich Informatik* \ _Department of Computer Science_])),
   )
 
@@ -117,7 +135,4 @@
       }
     )
   )
-
-
-  pagebreak()
 }

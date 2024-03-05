@@ -34,7 +34,7 @@ in @tab1 kann man sehen, dass
 ==== asdf
 #lorem(20)
 #figure(
-  image("../img/hbrs_logo.jpg"),
+  image("../img/hbrs_logo.png"),
   caption: [HBRS logo],
   kind: "fig",
   supplement: "Abbildung"
