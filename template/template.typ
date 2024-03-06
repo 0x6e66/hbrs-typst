@@ -1,36 +1,10 @@
 #import "@preview/fontawesome:0.1.0": *
 
-#import "meta.typ": *
+#import "../ads/meta.typ": *
 #import "utils.typ": *
 #import "titlepage.typ": titlepage
 #import "declaration.typ": declaration
-#import "acronyms.typ": acronyms
-
-#let auto_import(file) = {
-  include {"../modules_" + language + "/" + file + ".typ"}
-}
-
-#let used_acronyms = state("usedDic", (:))
-#let acro(body) = {
-  if(acronyms.keys().contains(body) == false) {
-    return rect(
-      fill: red,
-      inset: 8pt,
-      radius: 4pt,
-      [*Warning:\ #body*],
-    )
-  }
-  used_acronyms.display(usedDic => {
-    if(usedDic.keys().contains(body)) {
-      return body
-    }
-    return acronyms.at(body) + " (" + body + ")"
-  });
-  used_acronyms.update(usedDic => {
-    usedDic.insert(body, true)
-    return usedDic
-  })
-}
+#import "../ads/acronyms.typ": acronyms
 
 #let thesis(doc) = {
   set text(

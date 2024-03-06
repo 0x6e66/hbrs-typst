@@ -1,4 +1,4 @@
-#import "meta.typ": *
+#import "../ads/meta.typ": *
 #import "utils.typ": *
 
 #let declaration = {

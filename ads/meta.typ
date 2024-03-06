@@ -23,8 +23,8 @@
 )
 
 #let thesis_sub_title = (
-  "de": "Optionaler Untertitel der Arbeit",
-  "en": "optional subtitle of the thesis",
+  "de": "Optionaler Untertitel der Arbeit", // <-- "" for ignoring subtitle
+  "en": "optional subtitle of the thesis", // <-- "" for ignoring subtitle
 )
 
 #let thesis_study_course = (
