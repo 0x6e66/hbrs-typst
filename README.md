@@ -12,3 +12,9 @@ Without changing the template, the only files you need to modify are:
 ```bash
 typst compile main.typ
 ```
+
+## Example
+<img src="https://github.com/0x6e66/hbrs-typst/assets/21971085/c4480e3b-3317-4eda-bf2c-36615c378300" width="49%">
+<img src="https://github.com/0x6e66/hbrs-typst/assets/21971085/266cdfe6-048b-4858-9ff4-a35c2e19e067" width="49%">
+<img src="https://github.com/0x6e66/hbrs-typst/assets/21971085/dfba6426-37f6-4d17-a7d1-89f97b6e699b" width="49%">
+<img src="https://github.com/0x6e66/hbrs-typst/assets/21971085/984779ee-c2d0-440a-b71c-720987c92218" width="49%">
