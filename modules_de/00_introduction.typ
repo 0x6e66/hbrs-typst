@@ -1,7 +1,7 @@
 #import "../template/template.typ": *
 
 = Einleitung
-#lorem(50)
+#lorem(600)
 
 == Sub-Einleitung
 #lorem(20)

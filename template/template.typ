@@ -16,6 +16,9 @@
   )
   set align(left)
 
+  let ht-first = state("page-first-section", [])
+  let ht-last = state("page-last-section", [])
+
   set page(
     paper: "a4",
     margin: (
@@ -25,19 +28,28 @@
       bottom: 1.5cm,
     ),
     background: none,
-    header: locate(loc => {
-      if [#loc.page()] == [1] {
-        return []
-      }
-      let elems = query(
-        selector(heading).before(loc),
-        loc,
-      )
-      if elems != () {
-        let body = elems.last().body
-        h(1fr) + emph(body)
-      }
-    }),
+    // https://stackoverflow.com/questions/76363935/typst-header-that-changes-from-page-to-page-based-on-state
+    header: locate(
+      loc => [
+          #let first-heading = query(
+            heading.where(level: 1).or(heading.where(level: 2)).or(heading.where(level: 3)), loc
+          ).find(
+            h => h.location().page() == loc.page()
+          )
+          #let last-heading = query(
+            heading.where(level: 1).or(heading.where(level: 2)).or(heading.where(level: 3)), loc
+          ).rev().find(h => h.location().page() == loc.page())
+          #{
+            if not first-heading == none {
+              ht-first.update([ #first-heading.body ])
+              ht-last.update([ #last-heading.body ])
+              align(right, text(style: "italic")[ #ht-first.display() ])
+            } else {
+                align(right, text(style: "italic")[ #ht-last.display() ])
+            }
+          }
+      ]
+    )
   )
 
   set heading(numbering: "1.1")

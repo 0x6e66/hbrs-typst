@@ -1,5 +1,5 @@
 = Grundlagen
 #lorem(500)
 
-== Grundlagen
+== Sub-Grundlagen
 #lorem(500)

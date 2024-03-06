@@ -4,16 +4,17 @@
 #let declaration = {
   set page(background: none)
 
-  heading(
-    numbering: none,
-    outlined: false,
-    bookmarked: false,
-    if language == "de" {
-      [Eigenständigkeiserklärung]
-    }
-    else if language == "en" {
-      [Declaration]
-    }
+  align(
+    left,
+    text(
+      size: 20pt,
+      if language == "de" {
+        [Eigenständigkeiserklärung]
+      }
+      else if language == "en" {
+        [Declaration]
+      }
+    )
   )
 
   align(
