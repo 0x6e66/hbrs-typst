@@ -39,7 +39,37 @@
       }
     }),
   )
+
   set heading(numbering: "1.1")
+  show heading.where(
+    level:1,
+  ): it => [
+    #set align(left)
+    #set text(20pt, weight: "bold")
+    #block(it)
+  ]
+  show heading.where(
+    level:2,
+  ): it => [
+    #set align(left)
+    #set text(17pt, weight: "regular")
+    #block(it)
+  ]
+  show heading.where(
+    level:3,
+  ): it => [
+    #set align(left)
+    #set text(14pt, weight: "regular")
+    #block(it)
+  ]
+  show heading.where(
+    level:4,
+  ): it => [
+    #set align(left)
+    #set text(11pt, weight: "regular")
+    #block(it)
+  ]
+  
 
   set par(justify: true)
 

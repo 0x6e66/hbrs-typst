@@ -8,17 +8,16 @@
 }
 
 #let abstract(lang, body) = {
-  align(
-    left,
-    text(
-      size: 20pt,
-      if lang == "de" {
-        [Zusammenfassung]
-      }
-      else if lang == "en" {
-        [Abstract]
-      }
-    )
+  heading(
+    numbering: none,
+    outlined: false,
+    bookmarked: true,
+    if lang == "de" {
+      [Zusammenfassung]
+    }
+    else if lang == "en" {
+      [Abstract]
+    }
   )
 
   body
