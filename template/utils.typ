@@ -7,6 +7,24 @@
   include {"../modules_" + language + "/" + file + ".typ"}
 }
 
+#let abstract(lang, body) = {
+  align(
+    left,
+    text(
+      size: 20pt,
+      if lang == "de" {
+        [Zusammenfassung]
+      }
+      else if lang == "en" {
+        [Abstract]
+      }
+    )
+  )
+
+  body
+  pagebreak()
+}
+
 #let used_acronyms = state("usedDic", (:))
 #let acro(body) = {
   if(acronyms.keys().contains(body) == false) {

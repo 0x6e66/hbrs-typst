@@ -5,6 +5,7 @@
 #import "titlepage.typ": titlepage
 #import "declaration.typ": declaration
 #import "../ads/acronyms.typ": acronyms
+#import "../ads/abstract.typ": abstract
 
 #let thesis(doc) = {
   set text(
@@ -44,6 +45,7 @@
 
   titlepage
   declaration
+  abstract
   table_of_contents
 
   // Start page numbering when actual content starts

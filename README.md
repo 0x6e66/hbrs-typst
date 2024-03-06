@@ -4,6 +4,7 @@
 Without changing the template, the only files you need to modify are:
 - `ads/`
   - `acronyms.typ`: define acronyms
+  - `abstract.typ`: define abstract in multiple languages
   - `meta.typ`: set personal information and general metadata about your thesis
 - `module_de/`: the actual content of the thesis in german
 - `module_en/`: the actual content of the thesis in english
