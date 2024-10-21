@@ -81,6 +81,7 @@
 }
 
 #let table_of_figures = {
+  pagebreak()
   heading(
     numbering: none,
     outlined: true,
@@ -98,6 +99,7 @@
 }
 
 #let table_of_tables = {
+  pagebreak()
   heading(
     numbering: none,
     outlined: true,
@@ -115,6 +117,7 @@
 }
 
 #let table_of_acronyms = {
+  pagebreak()
   heading(
     numbering: none,
     outlined: true,
@@ -136,6 +139,7 @@
 }
 
 #let table_of_listings = {
+  pagebreak()
   heading(
     numbering: none,
     outlined: true,
@@ -153,6 +157,7 @@
 }
 
 #let bib = {
+  pagebreak()
   bibliography(
     title: {
       if language == "de" {
@@ -164,3 +169,4 @@
     bib_file
   )
 }
+

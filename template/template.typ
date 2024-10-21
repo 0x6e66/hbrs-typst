@@ -101,14 +101,9 @@
 
   doc
 
-  pagebreak()
   table_of_figures
-  pagebreak()
   table_of_tables
-  pagebreak()
   table_of_listings
-  pagebreak()
   table_of_acronyms
-  pagebreak()
   bib
 }
