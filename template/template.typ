@@ -1,4 +1,5 @@
 #import "@preview/fontawesome:0.1.0": *
+#import "@preview/hydra:0.5.2": hydra
 
 #import "../ads/meta.typ": *
 #import "utils.typ": *
@@ -28,28 +29,9 @@
       bottom: 1.5cm,
     ),
     background: none,
-    // https://stackoverflow.com/questions/76363935/typst-header-that-changes-from-page-to-page-based-on-state
-    header: locate(
-      loc => [
-          #let first-heading = query(
-            heading.where(level: 1).or(heading.where(level: 2)).or(heading.where(level: 3)), loc
-          ).find(
-            h => h.location().page() == loc.page()
-          )
-          #let last-heading = query(
-            heading.where(level: 1).or(heading.where(level: 2)).or(heading.where(level: 3)), loc
-          ).rev().find(h => h.location().page() == loc.page())
-          #{
-            if not first-heading == none {
-              ht-first.update([ #first-heading.body ])
-              ht-last.update([ #last-heading.body ])
-              align(right, text(style: "italic")[ #ht-first.display() ])
-            } else {
-                align(right, text(style: "italic")[ #ht-last.display() ])
-            }
-          }
-      ]
-    )
+    header: context {
+      align(right, hydra(2))
+    }
   )
 
   set heading(numbering: "1.1")
