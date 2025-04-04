@@ -23,13 +23,13 @@ in @tab1 kann man sehen, dass
 #lorem(20)
 @Wellens2010 @Yoshida1999 @Walke2001 #lorem(2) @Walke2000 @Burns2003
 #lorem(20)
-#acro("API")
+#ac("API")
 #lorem(20)
-#acro("API")
+#ac("API")
 #lorem(20)
-#acro("IOCCC")
+#ac("IOCCC")
 #lorem(20)
-#acro("IOCCC")
+#ac("IOCCC")
 
 ==== asdf
 #lorem(20)
@@ -37,31 +37,31 @@ in @tab1 kann man sehen, dass
   image("../img/hbrs_logo.png"),
   caption: [HBRS logo],
   kind: "fig",
-  supplement: "Abbildung"
+  supplement: "Abbildung",
 ) <abb1>
 
 ===== asdf
 #lorem(20)
 #figure(
   ```rust
-  fn handle_connection(mut stream: TcpStream) {
-      // --snip--
+   fn handle_connection(mut stream: TcpStream) {
+       // --snip--
 
-      let (status_line, filename) = if request_line == "GET / HTTP/1.1" {
-          ("HTTP/1.1 200 OK", "hello.html")
-      } else {
-          ("HTTP/1.1 404 NOT FOUND", "404.html")
-      };
+       let (status_line, filename) = if request_line == "GET / HTTP/1.1" {
+           ("HTTP/1.1 200 OK", "hello.html")
+       } else {
+           ("HTTP/1.1 404 NOT FOUND", "404.html")
+       };
 
-      let contents = fs::read_to_string(filename).unwrap();
-      let length = contents.len();
+       let contents = fs::read_to_string(filename).unwrap();
+       let length = contents.len();
 
-      let response =
-          format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
+       let response =
+           format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
 
-      stream.write_all(response.as_bytes()).unwrap();
-  }
- ```,
+       stream.write_all(response.as_bytes()).unwrap();
+   }
+  ```,
   caption: [Code Ausschnitt],
   kind: "lst",
   supplement: "Listing",

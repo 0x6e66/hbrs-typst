@@ -1,10 +1,10 @@
-#import "@preview/outrageous:0.1.0"
+#import "@preview/outrageous:0.4.0"
+#import "@preview/acrostiche:0.5.1": *
 
 #import "../ads/meta.typ": *
-#import "../ads/acronyms.typ": acronyms
 
 #let auto_import(file) = {
-  include {"../modules_" + language + "/" + file + ".typ"}
+  include { "../modules_" + language + "/" + file + ".typ" }
 }
 
 #let abstract(lang, body) = {
@@ -14,37 +14,14 @@
       size: 20pt,
       if lang == "de" {
         [Zusammenfassung]
-      }
-      else if lang == "en" {
+      } else if lang == "en" {
         [Abstract]
-      }
-    )
+      },
+    ),
   )
 
   body
   pagebreak()
-}
-
-#let used_acronyms = state("usedDic", (:))
-#let acro(body) = {
-  if(acronyms.keys().contains(body) == false) {
-    return rect(
-      fill: red,
-      inset: 8pt,
-      radius: 4pt,
-      [*Warning:\ #body*],
-    )
-  }
-  used_acronyms.display(usedDic => {
-    if(usedDic.keys().contains(body)) {
-      return body
-    }
-    return acronyms.at(body) + " (" + body + ")"
-  });
-  used_acronyms.update(usedDic => {
-    usedDic.insert(body, true)
-    return usedDic
-  })
 }
 
 #let language_switch(dict) = {
@@ -57,7 +34,7 @@
   panic("language value not matching any key in the array")
 }
 
-#let today= {
+#let today = {
   datetime.today().display("[day].[month].[year]")
 }
 
@@ -66,12 +43,11 @@
     ..outrageous.presets.outrageous-toc,
   )
   outline(
-    title:
-      if language == "de" {
-        "Inhaltsverzeichnis"
-      } else if language == "en" {
-        "Table of Contents"
-      },
+    title: if language == "de" {
+      "Inhaltsverzeichnis"
+    } else if language == "en" {
+      "Table of Contents"
+    },
     target: heading,
     indent: auto,
     depth: 3,
@@ -85,12 +61,12 @@
   heading(
     numbering: none,
     outlined: true,
-    bookmarked: true, 
+    bookmarked: true,
     if language == "de" {
       "Abbildungsverzeichnis"
     } else if language == "en" {
       "List of figures"
-    }
+    },
   )
   outline(
     title: none,
@@ -103,12 +79,12 @@
   heading(
     numbering: none,
     outlined: true,
-    bookmarked: true, 
+    bookmarked: true,
     if language == "de" {
       "Tabellenverzeichnis"
     } else if language == "en" {
       "List of tables"
-    }
+    },
   )
   outline(
     title: none,
@@ -121,20 +97,22 @@
   heading(
     numbering: none,
     outlined: true,
-    bookmarked: true, 
+    bookmarked: true,
     if language == "de" {
       "Abkürzungsverzeichnis"
     } else if language == "en" {
       "List of acronyms"
-    }
+    },
   )
-  table(
-    columns: (auto, auto),
-    stroke: none,
-    align: (x, y) => (right, left).at(x),
-    ..for (k, v) in acronyms {
-      ([*#k*], v)
-    }
+  print-index(
+    level: 1,
+    numbering: none,
+    outlined: false,
+    sorted: "",
+    title: "",
+    delimiter: "",
+    row-gutter: 7pt,
+    used-only: true,
   )
 }
 
@@ -143,12 +121,12 @@
   heading(
     numbering: none,
     outlined: true,
-    bookmarked: true, 
+    bookmarked: true,
     if language == "de" {
       "Quellcodeverzeichnis"
     } else if language == "en" {
       "List of code-listings"
-    }
+    },
   )
   outline(
     title: none,
@@ -166,7 +144,7 @@
         "Bibliography"
       }
     },
-    bib_file
+    bib_file,
   )
 }
 
